@@ -1,24 +1,15 @@
-import {
-  Image,
-  StyleSheet,
-  Platform,
-  View,
-  Pressable,
-  Text,
-} from "react-native";
-import * as DocumentPicker from "expo-document-picker";
+import { StyleSheet, Platform, View, Pressable, Text } from "react-native";
+import { Image } from "expo-image";
 
 export default function HomeScreen() {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Pressable
-        onPress={() =>
-          DocumentPicker.getDocumentAsync({
-            type: "video/*",
-          })
-        }>
-        <Text>Pick document</Text>
-      </Pressable>
+      <Image
+        source={{
+          uri: "https://commons.wikimedia.org/wiki/Special:FilePath/Cypron-Range Vulpes lagopus.svg",
+        }}
+        style={{ width: 200, height: 200 }}
+      />
     </View>
   );
 }
